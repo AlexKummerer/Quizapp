@@ -3,4 +3,32 @@ body {
     padding: 16px;
     padding-left: 64px;
     padding-right: 64px;
+    padding-top: 96px;
+}
+
+.navbar-custom {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 80px;
+    z-index: 50;
+    padding-left: 16px;
+}
+
+.footer-custom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.quiz-answer-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.quiz-answer-row button {
+    width: 40%;
+    height: 80px;
 }

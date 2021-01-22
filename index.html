@@ -1,28 +1,86 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quizzapp</title>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/questions.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/index.css" />
 </head>
 
-<body>
-    <h1>Awesome HTML Quiz!!!</h1>
-    <div class="card">
-        <div class="card-body">Hier wird eine Frage gestellt!!!</div>
+<body onload="nextQuestion()">
+    <!-- Image and text -->
+    <nav class="navbar navbar-light navbar-custom bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="img/question.jpg" width="30" height="30" class="d-inline-block align-top" alt="" /> The AwesomeHTML Quiz :-)
+        </a>
+    </nav>
+
+    <div id="quiz-finished-container" class="d-none">
+        <h2>You finished the Quiz, Congretulations!!!</h2>
+        <img src="img/firework.jpg" alt="">
     </div>
 
-    <div class="mt-4">
-        <button class="btn btn-primary">Antwort A</button>
-        <button class="btn btn-primary">Antwort B</button>
-        <button class="btn btn-primary">Antwort C</button>
-        <button class="btn btn-primary">Antwort D</button>
-    </div>
-</body>
+    <div id="quiz-container">
+        <div id="right-answer" class="alert alert-success d-none" role="alert">
+            Deine Anwort ist richtig !!!
+        </div>
+        <div id="wrong-answer" class="alert alert-danger d-none" role="alert">
+            Deine Anwort ist falsch !!!
+        </div>
 
+        <h1>Awesome HTML Quiz!!!</h1>
+        <div class="card">
+            <div class="progress">
+                <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 0%">
+                    0%
+                </div>
+            </div>
+
+            <div class="card-body pt-4" id="question">
+                Hier wird eine Frage gestellt!!!
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <div class="quiz-answer-row mt-4">
+                <button onclick="answer(1)" class="btn btn-outline-primary" id="answer1">
+            Antwort A
+          </button>
+                <button onclick="answer(2)" class="btn btn-outline-primary" id="answer2">
+            Antwort B
+          </button>
+            </div>
+            <div class="quiz-answer-row mt-4">
+                <button onclick="answer(3)" class="btn btn-outline-primary" id="answer3">
+            Antwort C
+          </button>
+                <button onclick="answer(4)" class="btn btn-outline-primary" id="answer4">
+            Antwort D
+          </button>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <button onclick="nextQuestion()" id="next-btn" class="btn btn-info d-none">
+          Nächste Frage
+        </button>
+        </div>
+    </div>
+    <!-- Footer-->
+    <footer class="bg-light text-center text-lg-start footer-custom">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            © 2021 Copyright:
+            <a class="text-dark" href="https://developerakademie.com">Developer Akademie</a
+        >
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!--Footer-->
+  </body>
 </html>
